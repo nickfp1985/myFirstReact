@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
 <head>
+    <meta charset="utf-8">
     <!-- import React.js -->
     <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
     <!-- import ReactDOM -->
@@ -8,15 +10,25 @@
     <script src="https://inpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 </head>
 <body>
-    <div id="root"></div>  <!-- where the app will live -->
+    <!-- the React app will live inside this "root" div -->
+    <div id="root"></div>
 
-    <script type="text/babel">  // React.js code
+    <!-- React.js code -->
+    <script type="text/babel">
+        // create component Home by extending upon the React-Component class
         class Hello extends
         React.Component {
+            // render method to tell React what to put on the page
             render() {
                 return <h1>Hello world!</h1>;
             }
         }
+        // connect the Hello component to the "root" div with ReactDOM.render()
+        ReactDOM.render(
+            <Hello />,
+        document.getElementById("root")    
+        );
+        // the <h1> and <Hello /> are the JSX code, it's not actually HTML
     </script>
 </body>
 </html>
